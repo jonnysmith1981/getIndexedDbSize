@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 (function showIndexedDbSize(dbname) {
- 
+  "use strict";
   var db;
   var storesizes = new Array();
  
