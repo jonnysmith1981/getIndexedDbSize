@@ -29,11 +29,17 @@ SOFTWARE.
  
   function openDatabase() {
     return new Promise(function(resolve, reject) {
-      var request = window.indexedDB.open("INSERT_DATABASE_NAME_HERE");
-      request.onsuccess = function (event) {
-        db = event.target.result;
-        resolve(db.objectStoreNames);
+      //prompt for DB name
+      var dbname = prompt('Please enter your Database Name', '');
+
+      if (dbname !== null) {
+        var request = window.indexedDB.open(dbname);
+        request.onsuccess = function (event) {
+          db = event.target.result;
+          resolve(db.objectStoreNames);
+        };
       }
+      
     });
   }
  
