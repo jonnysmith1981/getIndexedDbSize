@@ -12,5 +12,5 @@ In order to run the function, you will need to set the database name in the 'ope
 
  To avoid inadvertantly triggering an IndexedDB upgrade, I do not pass a version number when calling indexedDB.open().
 
- ##Notes
- The current version of this function makes use of console.table() to display the results. As such it only really works in Google Chrome.
+##Notes
+The current version of this function makes use of console.table() to display the results. As such it only really works in Google Chrome.
