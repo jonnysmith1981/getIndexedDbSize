@@ -49,7 +49,9 @@ SOFTWARE.
       var store = trans.objectStore(storename);
       var items = [];
       trans.oncomplete = function(evt) {
-        storesizes.push({'Store Name': storename, 'Size': toSize(items)});
+        var szBytes = toSize(items);
+        var szMBytes = szBytes / 1024 / 1024;
+        storesizes.push({'Store Name': storename, 'Size': szMBytes + 'MB (' + szBytes + ' bytes)'});
         resolve();
       };
       var cursorRequest = store.openCursor();
