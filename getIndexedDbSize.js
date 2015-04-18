@@ -50,7 +50,7 @@ SOFTWARE.
       var items = [];
       trans.oncomplete = function(evt) {
         var szBytes = toSize(items);
-        var szMBytes = szBytes / 1024 / 1024;
+        var szMBytes = (szBytes / 1024 / 1024).toFixed(2);
         storesizes.push({'Store Name': storename, 'Size': szMBytes + 'MB (' + szBytes + ' bytes)'});
         resolve();
       };
